@@ -29,9 +29,12 @@ git push -u origin main
 ### 2.1 Update API Base URL
 Before deploying, you need to update the API base URL in your services to point to your deployed backend.
 
-Create a `.env.production` file:
+Your `.env.production` file is already configured with:
 ```env
-VITE_API_BASE_URL=https://your-backend-url.onrender.com
+VITE_API_BASE_URL=https://youtube-clone-1-ntn4.onrender.com
+VITE_GOOGLE_CLIENT_ID=321814641348-m4j1vkn468pjkac7oo4ug9tqaiacgc0m.apps.googleusercontent.com
+VITE_GOOGLE_REDIRECT_URL=https://youtube-clone-1-ntn4.onrender.com/auth/google/callback
+VITE_FRONTEND_URL=https://youtube-clone-frontend-livid.vercel.app
 ```
 
 ### 2.2 Update Service Files
@@ -57,7 +60,10 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000
 
 ### 3.3 Environment Variables
 In Vercel dashboard, add these environment variables:
-- `VITE_API_BASE_URL`: Your backend URL (e.g., `https://your-backend.onrender.com`)
+- `VITE_API_BASE_URL`: `https://youtube-clone-1-ntn4.onrender.com`
+- `VITE_GOOGLE_CLIENT_ID`: `321814641348-m4j1vkn468pjkac7oo4ug9tqaiacgc0m.apps.googleusercontent.com`
+- `VITE_GOOGLE_REDIRECT_URL`: `https://youtube-clone-1-ntn4.onrender.com/auth/google/callback`
+- `VITE_FRONTEND_URL`: `https://youtube-clone-frontend-livid.vercel.app`
 - `NODE_ENV`: `production`
 
 ### 3.4 Deploy
@@ -71,7 +77,8 @@ Make sure your backend allows requests from your Vercel domain:
 // In your backend CORS configuration
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://your-vercel-app.vercel.app'
+  'http://localhost:5173',
+  'https://youtube-clone-frontend-livid.vercel.app'
 ];
 ```
 
@@ -134,4 +141,4 @@ git push
 4. **Build Time**: First deployment may take 2-3 minutes
 5. **Free Tier**: Vercel free tier has bandwidth limits but should be sufficient for testing
 
-Your app will be available at: `https://your-project-name.vercel.app`
+Your app is available at: `https://youtube-clone-frontend-livid.vercel.app`
