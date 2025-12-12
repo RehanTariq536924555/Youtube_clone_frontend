@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Auth</title>
+</head>
+<body>
+    <h1>Test Authentication</h1>
+    <div id="results"></div>
+    
+    <script>
+        const API_BASE_URL = 'http://localhost:4000';
+        const results = document.getElementById('results');
+        
+        async function testAuth() {
+            results.innerHTML = '<p>Testing...</p>';
+            
+            // Mock login
+            const mockUser = {
+                id: 'e7543521-15bd-40b2-ba05-37d7291c4976',
+                name: 'Rehan',
+                email: 'rehantariq749@gmail.com',
+                avatar: null
+            };
+            const mockToken = 'mock-token-for-testing';
+            localStorage.setItem('nebula_token', mockToken);
+            localStorage.setItem('nebula_user', JSON.stringify(mockUser));
+            
+            // Test authenticated request
+            try {
+                const response = await fetch(`${API_BASE_URL}/likes/toggle`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${mockToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        targetId: '6c0e6886-11d1-4b0c-a118-0d3c005acf32',
+                        targetType: 'video',
+                        type: 'like'
+                    })
+                });
+                
+                const data = await response.json();
+                results.innerHTML = `
+                    <h2>Response:</h2>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                    <p>Status: ${response.status}</p>
+                `;
+            } catch (error) {
+                results.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+        
+        // Auto-run test
+        testAuth();
+    </script>
+</body>
+</html>

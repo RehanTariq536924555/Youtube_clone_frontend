@@ -1,0 +1,98 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #181818;
+  overflow: hidden;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background: #212121;
+  border-right: 1px solid #333;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .admin-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}
+
+.admin-logo {
+  padding: 24px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.admin-logo h2 {
+  margin: 0;
+  color: #ff0000;
+  font-size: 24px;
+}
+
+.admin-user-info {
+  margin-top: 8px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.admin-nav {
+  padding: 20px 0;
+}
+
+.nav-item {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-item:hover {
+  background: #181818;
+}
+
+.nav-item.logout-btn {
+  color: #ff6b6b;
+  margin-top: 10px;
+}
+
+.nav-item.logout-btn:hover {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.nav-item.back {
+  margin-top: 20px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.admin-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .admin-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+}

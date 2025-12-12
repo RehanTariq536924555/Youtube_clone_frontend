@@ -1,0 +1,234 @@
+.admin-settings {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 30px;
+}
+
+.settings-header h1 {
+  font-size: 32px;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.settings-subtitle {
+  color: #aaa;
+  font-size: 16px;
+  margin: 0;
+}
+
+.settings-message {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.settings-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.settings-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.settings-card {
+  background: #212121;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.settings-card h2 {
+  margin: 0 0 25px 0;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.label-hint {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: #181818;
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff0000;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.char-count {
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  font-size: 12px;
+  color: #666;
+}
+
+.settings-preview {
+  background: #212121;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.settings-preview h3 {
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.preview-box {
+  background: #181818;
+  border: 2px dashed #333;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+}
+
+.preview-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+.preview-tagline {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.preview-description {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.btn-reset,
+.btn-save {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-reset {
+  background: #333;
+  color: #fff;
+}
+
+.btn-reset:hover:not(:disabled) {
+  background: #444;
+}
+
+.btn-save {
+  background: #ff0000;
+  color: #fff;
+}
+
+.btn-save:hover:not(:disabled) {
+  background: #cc0000;
+  transform: translateY(-2px);
+}
+
+.btn-reset:disabled,
+.btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings-info {
+  background: #212121;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.settings-info h3 {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.settings-info ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.settings-info li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .settings-actions {
+    flex-direction: column;
+  }
+
+  .btn-reset,
+  .btn-save {
+    width: 100%;
+  }
+}
